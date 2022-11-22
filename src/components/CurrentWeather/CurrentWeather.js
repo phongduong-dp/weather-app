@@ -1,28 +1,38 @@
 import "./CurrentWeather.css";
 
-const CurrentWeather = () => {
+function CurrentWeather(props) {
   return (
     <div className="weather">
       <div className="top">
         <div>
-          <p className="city">Belgrade</p>
-          <p className="weather-description">Sunny</p>
+          <p className="city">{props.data.city}</p>
+          <p className="weather-description">
+            {props.data.weather[0].description}
+          </p>
         </div>
-        <img src="icons/01d.png" alt="weather-icon" className="weather-icon" />
+        <img
+          src={`icons/${props.data.weather[0].icon}.png`}
+          alt="weather-icon"
+          className="weather-icon"
+        />
       </div>
       <div className="bottom">
-        <p className="temperature">18°C</p>
+        <p className="temperature">{`${Math.round(props.data.main.temp)}°C`}</p>
         <div className="details">
           <div className="parameter-row">
             <span className="parameter-label">Details</span>
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Feels Like</span>
-            <span className="parameter-value">22°C</span>
+            <span className="parameter-value">{`${Math.round(
+              props.data.main.feels_like
+            )}°C`}</span>
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Wind</span>
-            <span className="parameter-value">2 m/s</span>
+            <span className="parameter-value">{`${Math.round(
+              props.data.wind.speed
+            )}m/s`}</span>
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Humidity</span>
@@ -36,6 +46,6 @@ const CurrentWeather = () => {
       </div>
     </div>
   );
-};
+}
 
 export default CurrentWeather;
