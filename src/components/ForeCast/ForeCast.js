@@ -17,10 +17,7 @@ function getDaysArray(num) {
     "Saturday",
     "Sunday",
   ];
-  let daysArray;
-  return (daysArray = daysAWeek
-    .slice(num, daysAWeek.length)
-    .concat(daysAWeek.slice(0, num)));
+  return daysAWeek.slice(num, daysAWeek.length).concat(daysAWeek.slice(0, num));
 }
 
 function ForeCast(props) {
