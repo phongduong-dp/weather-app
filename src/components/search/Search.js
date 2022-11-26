@@ -7,7 +7,7 @@ const Search = (props) => {
   const loadOptions = (inputValue) => {
     return fetch(
       `${process.env.GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
-      process.env.geoAPIOption
+      {process.env.geoAPIOption}
     )
       .then((response) => response.json())
       .then((response) => {
