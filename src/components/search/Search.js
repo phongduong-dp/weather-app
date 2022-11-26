@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
-import { GEO_API_URL, geoAPIOption } from "../../api";
 
 const Search = (props) => {
   const [search, setSearch] = useState(null);
 
   const loadOptions = (inputValue) => {
     return fetch(
-      `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
-      geoAPIOption
+      `${process.env.GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
+      process.env.geoAPIOption
     )
       .then((response) => response.json())
       .then((response) => {
