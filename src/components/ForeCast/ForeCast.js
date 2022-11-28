@@ -6,6 +6,7 @@ import {
   AccordionItemPanel,
 } from "react-accessible-accordion";
 import "./ForeCast.css";
+import React from "react";
 
 function getDaysArray(num) {
   const daysAWeek = [
