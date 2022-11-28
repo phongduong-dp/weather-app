@@ -1,14 +1,22 @@
 import { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
+import React from "react";
 
 const Search = (props) => {
   const [search, setSearch] = useState(null);
+  const geoAPIKey = process.env.REACT_APP_GEO_API_KEY;
+  const geoAPIOption = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": geoAPIKey,
+      "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
+    },
+  };
 
   const loadOptions = (inputValue) => {
-    console.log("aaaa);
     return fetch(
-      `${process.env.GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
-      JSON.parse(process.env.geoAPIOption)
+      `${process.env.REACT_APP_GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
+      geoAPIOption
     )
       .then((response) => response.json())
       .then((response) => {
