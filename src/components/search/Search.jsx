@@ -4,7 +4,7 @@ import React from "react";
 
 const Search = (props) => {
   const [search, setSearch] = useState(null);
-  const geoAPIKey = process.env.REACT_APP_GEO_API_KEY;
+  const geoAPIKey = import.meta.env.VITE_GEO_API_KEY;
   const geoAPIOption = {
     method: "GET",
     headers: {
@@ -15,7 +15,7 @@ const Search = (props) => {
 
   const loadOptions = (inputValue) => {
     return fetch(
-      `${process.env.REACT_APP_GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
+      `${import.meta.env.VITE_GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
       geoAPIOption
     )
       .then((response) => response.json())
