@@ -6,7 +6,7 @@
   width: 493px;
   height: 666px;
   margin: 20px 0px 20px 40px;
-  z-index: 2;
+  z-index: -1;
   background: linear-gradient(
     152.19deg,
     rgba(171, 178, 179, 0.9) -0.04%,
@@ -17,7 +17,7 @@
 .current-weather-bg {
   position: absolute;
   opacity: 0.2;
-  z-index: -1;
+  z-index: -3;
 }
 
 .top,
