@@ -36,7 +36,7 @@ function CurrentWeather(props) {
   return (
     <div className="weather">
       <img
-        src="public/current-weather-bg.png"
+        src="current-weather-bg.png"
         alt="Back ground beach"
         className="current-weather-bg"
       />
