@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;600;700&display=swap");
 body {
   margin: 0;
-  font-family: "Familjen Grotesk", sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #d5d4d4;
+  background-color: #343d4b;
 }
 
 code {
