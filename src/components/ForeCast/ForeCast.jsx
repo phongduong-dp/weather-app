@@ -26,7 +26,6 @@ function ForeCast(props) {
 
   return (
     <>
-      <label className="title">Daily</label>
       <Accordion allowZeroExpanded>
         {props.data.list.slice(0, 7).map((item, idx) => {
           return (
