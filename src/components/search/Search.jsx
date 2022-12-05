@@ -15,7 +15,9 @@ const Search = (props) => {
 
   const loadOptions = (inputValue) => {
     return fetch(
-      `${import.meta.env.VITE_GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
+      `${
+        import.meta.env.VITE_GEO_API_URL
+      }/cities?minPopulation=1000000&namePrefix=${inputValue}`,
       geoAPIOption
     )
       .then((response) => response.json())
