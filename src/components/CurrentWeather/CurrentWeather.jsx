@@ -36,7 +36,7 @@ function CurrentWeather(props) {
   return (
     <div className="weather">
       <img
-        src="../../../public/current-weather-bg.png"
+        src="public/current-weather-bg.png"
         alt="Back ground beach"
         className="current-weather-bg"
       />
@@ -50,7 +50,7 @@ function CurrentWeather(props) {
             currentDate.getFullYear()}
         </p>
         <p className="city">
-          <img src="../../../public/icons/location.png" alt="location icon" />
+          <img src="icons/location.png" alt="location icon" />
           {props.data.city}
         </p>
       </div>
