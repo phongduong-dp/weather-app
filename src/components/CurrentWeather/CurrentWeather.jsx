@@ -1,53 +1,69 @@
 import "./CurrentWeather.css";
 import React from "react";
 
+function getDaysArray(num) {
+  const daysAWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return daysAWeek[num];
+}
+function getMonth(month) {
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  return monthNames[month];
+}
+
 function CurrentWeather(props) {
+  const currentDate = new Date();
   return (
     <div className="weather">
+      <img
+        src="../../../public/current-weather-bg.png"
+        alt="Back ground beach"
+        className="current-weather-bg"
+      />
       <div className="top">
-        <div>
-          <p className="city">{props.data.city}</p>
-          <p className="weather-description">
-            {props.data.weather[0].description}
-          </p>
-        </div>
+        <p className="current-day">{getDaysArray(currentDate.getDay())}</p>
+        <p className="current-date">
+          {currentDate.getDate() +
+            " " +
+            getMonth(currentDate.getMonth()) +
+            " " +
+            currentDate.getFullYear()}
+        </p>
+        <p className="city">
+          <img src="../../../public/icons/location.png" alt="location icon" />
+          {props.data.city}
+        </p>
+      </div>
+      <div className="bottom">
         <img
           src={`icons/${props.data.weather[0].icon}.png`}
           alt="weather-icon"
           className="weather-icon"
         />
-      </div>
-      <div className="bottom">
         <p className="temperature">{`${Math.round(props.data.main.temp)}°C`}</p>
-        <div className="details">
-          <div className="parameter-row">
-            <span className="parameter-label">Details</span>
-          </div>
-          <div className="parameter-row">
-            <span className="parameter-label">Feels Like</span>
-            <span className="parameter-value">{`${Math.round(
-              props.data.main.feels_like
-            )}°C`}</span>
-          </div>
-          <div className="parameter-row">
-            <span className="parameter-label">Wind</span>
-            <span className="parameter-value">{`${Math.round(
-              props.data.wind.speed
-            )}m/s`}</span>
-          </div>
-          <div className="parameter-row">
-            <span className="parameter-label">Humidity</span>
-            <span className="parameter-value">{`${Math.round(
-              props.data.main.humidity
-            )}%`}</span>
-          </div>
-          <div className="parameter-row">
-            <span className="parameter-label">Pressure</span>
-            <span className="parameter-value">{`${Math.round(
-              props.data.main.pressure
-            )} hPa`}</span>
-          </div>
-        </div>
+        <p className="weather-description">
+          {props.data.weather[0].description}
+        </p>
       </div>
     </div>
   );
