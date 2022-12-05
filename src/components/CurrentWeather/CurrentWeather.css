@@ -1,65 +1,90 @@
 .weather {
-  width: 300px;
-  border-radius: 6px;
-  box-shadow: 20px -2px 20px 2px rgb(0 0 0/30%);
-  color: #fff;
-  background-color: #333;
-  margin: 20px auto 0 auto;
-  padding: 0 20px 20px 20px;
+  position: absolute;
+  display: grid;
+  box-sizing: border-box;
+  border-radius: 30px;
+  width: 493px;
+  height: 666px;
+  margin: 20px 0px 20px 40px;
+  z-index: 2;
+  background: linear-gradient(
+    152.19deg,
+    rgba(171, 178, 179, 0.9) -0.04%,
+    rgba(83, 91, 230, 0.9) 100%
+  );
+}
+
+.current-weather-bg {
+  position: absolute;
+  opacity: 0.2;
+  z-index: -1;
 }
 
 .top,
 .bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 0px 32px;
+  color: #ffffff;
+}
+
+/* Styling for top group */
+.current-day {
+  font-weight: 700;
+  font-size: 37px;
+  margin: 48px 0 0 0;
+}
+
+.current-date {
+  margin: 16px 0px;
+  font-weight: 500;
+  font-size: 22px;
 }
 
 .city {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1;
   margin: 0;
   letter-spacing: 1px;
 }
 
+.city img {
+  margin-right: 8px;
+}
+
+/*Styling for bottom group*/
 .weather-description {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1;
+  position: absolute;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+  bottom: 84px;
   margin: 0;
 }
 
 .weather-icon {
-  width: 100px;
+  position: absolute;
+  bottom: 196px;
+  width: 95px;
+  height: 95px;
+  margin: 0;
 }
-
 .temperature {
+  position: absolute;
   font-weight: 600;
-  font-size: 70px;
+  font-size: 50px;
+  line-height: 61px;
   width: auto;
-  letter-spacing: -5px;
-  margin: 10px 0;
+  margin: 0;
+  bottom: 126px;
 }
 
-.details {
-  width: 100%;
-  padding-left: 20px;
-}
-
-.parameter-row {
-  display: flex;
-  justify-content: space-between;
-}
-
-.parameter-label {
-  text-align: left;
-  font-weight: 400;
-  font-size: 12px;
-}
-
-.parameter-value {
-  text-align: right;
-  font-weight: 600;
-  font-size: 12px;
+@media (max-width: 960px) {
+  .weather {
+    margin: 10px 0px;
+    width: 100%;
+  }
+  .current-weather-bg {
+    width: 100%;
+    height: 100%;
+  }
 }
